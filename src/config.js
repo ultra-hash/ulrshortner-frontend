@@ -1,5 +1,8 @@
+const BaseUrl = "http://localhost"
+const Port = 2023
 
 export const api = {
-    BaseUrl: "http://localhost",
-    Port: 2023,
+    BaseUrl,
+    Port,
+    RedirectUrl: `${BaseUrl}:${Port}/url`,
 }
