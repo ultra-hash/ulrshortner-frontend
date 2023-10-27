@@ -19,8 +19,7 @@ export default function Register() {
             phoneNumber: phone_number,
             password
         }
-        const { BaseUrl, Port } = api
-        const url = BaseUrl + ':' + Port + '/user/'
+        const url = api.routes.users.RegisterUser
         const options = {
             method: 'POST',
             headers: {

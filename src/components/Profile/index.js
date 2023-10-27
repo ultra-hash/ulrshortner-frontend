@@ -9,8 +9,7 @@ export default function Profile() {
     const [username, setUsername] = useState('')
 
     const callGetUserDetailsApi = async () => {
-        const { BaseUrl, Port } = api
-        const url = BaseUrl + ':' + Port + '/user/user-details?username=johncena'
+        const url = api.routes.users.GetUserDetails + '?username=johncena'
 
         const response = await fetch(url)
         const data = await response.json()

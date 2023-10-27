@@ -12,8 +12,7 @@ export default function Login(props) {
 
 
     const loginApi = async () => {
-        const { BaseUrl, Port } = api
-        const url = BaseUrl + ':' + Port + '/user/login'
+        const url = api.routes.users.LoginUser
         const options = {
             method: 'POST',
             headers: {

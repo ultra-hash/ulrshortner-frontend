@@ -8,8 +8,7 @@ export default function Home() {
     const [errorMsg, setErrorMsg] = useState('')
 
     const callCreateShortUrlApi = async () => {
-        const { BaseUrl, Port } = api
-        const url = BaseUrl + ':' + Port + '/url/'
+        const url = api.routes.urls.CreateUrl
         const userId = 1
         const options = {
             method: 'POST',
