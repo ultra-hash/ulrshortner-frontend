@@ -13,7 +13,9 @@ export const api = {
         users: {
             RegisterUser: `${BASE_URL}/user/register`,
             LoginUser: `${BASE_URL}/user/login`,
-            GetUserDetails: `${BASE_URL}/user/user-details`
+            GetUserDetails: `${BASE_URL}/user/details`
         }
     }
 }
+
+export const HOST_URL = "http://localhost:3000"
