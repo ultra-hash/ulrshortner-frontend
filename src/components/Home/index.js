@@ -1,5 +1,15 @@
 import { useState } from 'react'
-import { api } from '../../config'
+import { api, HOST_URL } from '../../config'
+import {
+    HomeBodyContainer,
+    HomeHeading,
+    HomeFormContainer,
+    HomeFormInput,
+    HomeFormSubmitButton,
+    HomeErrorContainer,
+    HomeErrorMessage
+} from './styledComponents'
+
 
 export default function Home() {
 
@@ -32,20 +42,17 @@ export default function Home() {
 
 
 
-    return (<>
-
-        <h1>Home</h1>
-
-        <form>
-            <div>
-                <input type="text" placeholder="long Url" value={longUrl} onChange={e => setLongUrl(e.target.value)} />
-            </div>
-            <div>
-                <button type="button" onClick={callCreateShortUrlApi}>Shrink URL</button>
-            </div>
-            {errorMsg !== '' && <p>{errorMsg}</p>}
-            {shortUrl !== '' && <p><b>shorterned url:</b> {shortUrl}</p>}
-        </form>
-    </>
+    return (
+        <HomeBodyContainer>
+            <HomeHeading>Url Shortner</HomeHeading>
+            <HomeFormContainer>
+                <HomeFormInput type="text" placeholder="Example : https://ultrahash.in/projects/urlshortner" value={longUrl} onChange={e => setLongUrl(e.target.value)} />
+                <HomeFormSubmitButton type="button" onClick={callCreateShortUrlApi}>Shrink URL</HomeFormSubmitButton>
+            </HomeFormContainer>
+            <HomeErrorContainer>
+                {<p><b>shortened url :</b> {shortUrl ? `${HOST_URL}/${shortUrl}` : ''}</p>}
+                {errorMsg !== '' && <HomeErrorMessage><b>Error : </b>{errorMsg}</HomeErrorMessage>}
+            </HomeErrorContainer>
+        </HomeBodyContainer>
     )
 }
